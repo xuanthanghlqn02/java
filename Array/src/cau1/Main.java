@@ -8,7 +8,7 @@ public class Main {
     public static void normalizeString(String str) {
         str = str.trim().toLowerCase();   // Loại bỏ khoảng trắng ở đầu và cuối & đổi hết về ký tự thường
         str = str.replaceAll("\\s+", " ");  //đổi toàn bộ các khoảng trắng (\\s+) thành 1 khoảng trắng
-        String temp[] = str.split(" ");
+        String temp[] = str.split(" "); // break các từ bằng space & gán toàn bộ vào 1 mảng
         str = "";
         for (int i = 0; i < temp.length; i++) {
             String normalizerStr = str + String.valueOf(temp[i].charAt(0)).toUpperCase() + temp[i].substring(1).toLowerCase();
