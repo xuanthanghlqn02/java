@@ -4,11 +4,11 @@ public class Employee {
     int employeeID;
     String employeeName;
     int employeeAge;
-    int employeePhoneNumber;
+    String employeePhoneNumber;
     String employeeEmail;
     double basicSalary;
 
-    public Employee(int employeeID, String employeeName, int employeeAge, int employeePhoneNumber, String employeeEmail, double basicSalary) {
+    public Employee(int employeeID, String employeeName, int employeeAge, String employeePhoneNumber, String employeeEmail, double basicSalary) {
         this.employeeID = employeeID;
         this.employeeName = employeeName;
         this.employeeAge = employeeAge;
@@ -41,11 +41,11 @@ public class Employee {
         this.employeeAge = employeeAge;
     }
 
-    public int getEmployeePhoneNumber() {
+    public String getEmployeePhoneNumber() {
         return employeePhoneNumber;
     }
 
-    public void setEmployeePhoneNumber(int employeePhoneNumber) {
+    public void setEmployeePhoneNumber(String employeePhoneNumber) {
         this.employeePhoneNumber = employeePhoneNumber;
     }
 
@@ -67,11 +67,11 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee ID: " + employeeID + " - " +
-                "Employee Name: " + employeeName + " - " +
-                "Employee Age: " + employeeAge + " - " +
-                "Employee Phone Number: " + employeePhoneNumber + " - " +
-                "Employee Email Address: " + employeeEmail + " - " +
+        return "ID: " + employeeID + " - " +
+                "Name: " + employeeName + " - " +
+                "Age: " + employeeAge + " - " +
+                "Phone Number: " + employeePhoneNumber + " - " +
+                "Email Address: " + employeeEmail + " - " +
                 "Basic Salary: " + basicSalary;
     }
 }

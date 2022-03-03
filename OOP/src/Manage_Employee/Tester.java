@@ -1,20 +1,19 @@
 package Manage_Employee;
 
+public class Tester extends Employee {
+    int errorNumber;
 
-public class Developer extends Employee {
-    double overTime;
-
-    public Developer(int employeeID, String employeeName, int employeeAge, String employeePhoneNumber, String employeeEmail, double basicSalary, double overTime) {
+    public Tester(int employeeID, String employeeName, int employeeAge, String employeePhoneNumber, String employeeEmail, double basicSalary, int errorNumber) {
         super(employeeID, employeeName, employeeAge, employeePhoneNumber, employeeEmail, basicSalary);
-        this.overTime = overTime;
+        this.errorNumber = errorNumber;
     }
 
-    public double getOverTime() {
-        return overTime;
+    public int getErrorNumber() {
+        return errorNumber;
     }
 
-    public void setOverTime(double overTime) {
-        this.overTime = overTime;
+    public void setErrorNumber(int errorNumber) {
+        this.errorNumber = errorNumber;
     }
 
     @Override
@@ -25,6 +24,6 @@ public class Developer extends Employee {
                 "Phone Number: " + employeePhoneNumber + " - " +
                 "Email Address: " + employeeEmail + " - " +
                 "Basic Salary: " + basicSalary + " - " +
-                "Over Time: " + overTime;
+                "Error Number: " + errorNumber;
     }
 }
