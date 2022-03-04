@@ -56,8 +56,8 @@ public class EmployeeMethods {
         return employeeList;
     }
 
-    public static void show(Developer[] dev) {
-        for (Developer x : dev) {
+    public static void show(Developer[] employeeList) {
+        for (Developer x : employeeList) {
             System.out.println(x);
         }
     }
