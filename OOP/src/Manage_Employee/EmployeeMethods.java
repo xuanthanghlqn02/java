@@ -38,10 +38,12 @@ public class EmployeeMethods {
             System.out.println("Enter the employee ID: ");
             int id = sc.nextInt();
             System.out.println("Enter the employee name: ");
+            sc.nextLine();
             String name = sc.nextLine();
             System.out.println("Enter the employee age: ");
             int age = sc.nextInt();
             System.out.println("Enter the employee phone number: ");
+            sc.nextLine();
             String phoneNumber = sc.nextLine();
             System.out.println("Enter the employee email address: ");
             String emailAddress = sc.nextLine();
