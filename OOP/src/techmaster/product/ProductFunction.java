@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductFunction {
-    public List<Product> createProducts() {
+    public static ArrayList<Product> createProducts() {
         Scanner sc = new Scanner(System.in);
         ArrayList<Product> products = new ArrayList<>();
 
@@ -21,17 +21,9 @@ public class ProductFunction {
             System.out.print("Name: ");
             String name = sc.nextLine();
 
-            System.out.print("quality: ");
-            int quanlity = Integer.parseInt(sc.nextLine());
-
-            System.out.print("price: ");
-            long price = Long.parseLong(sc.nextLine());
-
-            Product product = new Product();
-
             Category category = null;
             while (true) {
-                System.out.print("Please choose the categoryStr of product: ");
+                System.out.print("Please choose the category of product(include CPU or RAM or MAINBOARD): ");
                 String categoryStr = sc.nextLine();
                 if (categoryStr.equalsIgnoreCase("CPU")) {
                     category = Category.CPU;
@@ -45,15 +37,24 @@ public class ProductFunction {
                 }
             }
 
-            product.setCategory(category);
-            product.setId(id);
-            product.setName(name);
-            product.setPrice(price);
-            product.setQuatity(quanlity);
+            System.out.print("Quality: ");
+            int quanlity = Integer.parseInt(sc.nextLine());
 
-            products.add(product);
+            System.out.print("Price: ");
+            long price = Long.parseLong(sc.nextLine());
+
+            Product p = new Product(id, name, category, quanlity, price);
+
+            products.add(p);
         }
 
         return products;
+    }
+
+    public static void showList (ArrayList<Product> list) {
+        System.out.println("List of all products");
+        for (Product x : list) {
+            System.out.println(x);
+        }
     }
 }
