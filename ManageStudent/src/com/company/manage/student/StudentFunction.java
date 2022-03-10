@@ -3,7 +3,7 @@ package com.company.manage.student;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class StudentFunction {
+public class StudentFunction implements Comparable<Student> {
 
     static Scanner sc = new Scanner(System.in);
 
@@ -29,6 +29,7 @@ public class StudentFunction {
         for (Student x : list) {
             System.out.println(x);
         }
+
     }
 
     public ArrayList<Student> addStudent(ArrayList<Student> list, Student s) {
@@ -129,5 +130,10 @@ public class StudentFunction {
         if (count == 0) {
             System.out.println("Do not have this classroom!");
         }
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return 0;
     }
 }
