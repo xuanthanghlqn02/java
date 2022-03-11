@@ -64,6 +64,6 @@ public class Product {
                 "Name: " + name + " - " +
                 "Category: " + category + " - " +
                 "Quantity: " + quantity + " - " +
-                "Price: " + price + " - ";
+                "Price: " + price;
     }
 }
