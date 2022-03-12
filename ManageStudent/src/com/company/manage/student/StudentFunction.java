@@ -60,7 +60,7 @@ public class StudentFunction implements Comparable<Student> {
         System.out.print("Class: ");
         String classroom = sc.nextLine();
 
-        Student ss = new Student(id, name, age, address, point, classroom);
+        Student ss = new Student(id, name, age, address, point, classroom.toUpperCase());
         list.add(ss);
 
         return list;
