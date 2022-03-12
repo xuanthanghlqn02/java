@@ -118,9 +118,9 @@ public class ProductFunction {
     public void showProductInPriceRange(ArrayList<Product> list) {
         System.out.println("Enter the price range you want to show");
         System.out.print("From: ");
-        long from = sc.nextLong();
+        long from = Long.parseLong(sc.nextLine());
         System.out.print("To: ");
-        long to = sc.nextLong();
+        long to = Long.parseLong(sc.nextLine());
         System.out.println("List of products you want to show: ");
         for (Product x : list) {
             if (x.getPrice() >= from && x.getPrice() <= to) {
@@ -130,17 +130,37 @@ public class ProductFunction {
     }
 
     public void filterByCategory(ArrayList<Product> list) {
-        System.out.print("Enter the product category you want to filter (CPU, RAM or MAIN): ");
-        Category category = Category.valueOf(sc.nextLine());
-        int count = 0;
-        for (Product x : list) {
-            if (x.getCategory().equals(category)) {
-                System.out.println(x);
-                count++;
-            }
-        }
-        if (count == 0) {
-            System.out.println("Do not have this product category");
+        System.out.println("Do you want to filter products by the product category? Please choose:");
+        System.out.print("1: CPU \t");
+        System.out.print("2: RAM \t");
+        System.out.println("3: MAIN");
+        System.out.print("Answer: ");
+        int filter = Integer.parseInt(sc.nextLine());
+        switch (filter) {
+            case 1:
+                for (Product x : list) {
+                    if (x.getCategory() == Category.CPU) {
+                        System.out.println(x);
+                    }
+                }
+                break;
+            case 2:
+                for (Product x : list) {
+                    if (x.getCategory() == Category.RAM) {
+                        System.out.println(x);
+                    }
+                }
+                break;
+            case 3:
+                for (Product x : list) {
+                    if (x.getCategory() == Category.MAIN) {
+                        System.out.println(x);
+                    }
+                }
+                break;
+            default:
+                System.out.println("Do not have this choice!");
+                System.out.println("The end!");
         }
     }
 }
