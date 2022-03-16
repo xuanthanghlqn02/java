@@ -130,7 +130,7 @@ public class ProductFunction {
     }
 
     public void filterByCategory(ArrayList<Product> list) {
-        System.out.println("Do you want to filter products by the product category? Please choose:");
+        System.out.println("Do you want to filter products by the product category? Please choose the number:");
         System.out.print("1: CPU \t");
         System.out.print("2: RAM \t");
         System.out.println("3: MAIN");
