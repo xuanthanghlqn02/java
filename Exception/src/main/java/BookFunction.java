@@ -1,7 +1,12 @@
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.sun.jdi.Type;
+import jdk.jfr.Category;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BookFunction {
@@ -13,14 +18,13 @@ public class BookFunction {
         Book[] book = null;
         FileReader reader;
 
-        {
-            try {
-                reader = new FileReader("book.json");
-                book = gson.fromJson(reader, Book[].class);
-            } catch (FileNotFoundException e) {
-                System.out.println("Khong tim thay file!");
-            }
+        try {
+            reader = new FileReader("book.json");
+            book = gson.fromJson(reader, Book[].class);
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found!");
         }
+
         return book;
     }
 
@@ -32,23 +36,162 @@ public class BookFunction {
 
     public void searchBookByName(Book[] book) {
 
-        System.out.print("Nhap vao ten sach muon tim: ");
+        System.out.print("Enter the book name you want to search: ");
         String bookName = sc.nextLine();
         int count = 0;
         for (Book x : book) {
-            if (x.getTitle().toUpperCase().contains(bookName.toUpperCase())) {
+            if (x.getTitle().toLowerCase().contains(bookName.toLowerCase())) {
                 System.out.println(x);
                 count++;
             }
         }
 
         if (count == 0) {
-            System.out.println("Khong co ten sach ban muon tim!");
+            System.out.println("Do not have the book name you want to search!");
         }
     }
 
-    public void searchBookByCategory (Book[] book) {
-        System.out.print("Nhap vao the loai sach muon tim: ");
-    }
+    public void searchBookByCategory(Book[] book) {
+        System.out.print("Enter the book category you want to search: ");
 
+        System.out.print("1. Action" + "\t");
+        System.out.print("2. Drama" + "\t");
+        System.out.print("3. Romance" + "\t");
+        System.out.print("4. War" + "\t");
+        System.out.print("5. Crime" + "\t");
+        System.out.print("6. Adventure" + "\t");
+        System.out.print("7. Comedy" + "\t");
+        System.out.print("8. Horror" + "\t");
+        System.out.print("9. Mystery" + "\t");
+        System.out.print("10. Thriller" + "\t");
+        System.out.println("11. Sci-Fi" + "\t");
+
+        System.out.print("Your answer: ");
+        int numberCategory = Integer.parseInt(sc.nextLine());
+
+        switch (numberCategory) {
+            case 1:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("Action")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+
+            case 2:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("Drama")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+
+            case 3:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("Romance")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+
+            case 4:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("War")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+
+            case 5:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("Crime")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+
+            case 6:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("Adventure")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+
+            case 7:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("Comedy")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+
+            case 8:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("Horror")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+
+            case 9:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("Mystery")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+
+            case 10:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("Thriller")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+
+            case 11:
+                for (Book x : book) {
+                    String[] category = x.getCategory();
+                    for (String y : category) {
+                        if (y.equalsIgnoreCase("Sci-Fi")) {
+                            System.out.println(x);
+                        }
+                    }
+                }
+                break;
+            default:
+                System.out.println("Do not have this choice!");
+        }
+    }
 }

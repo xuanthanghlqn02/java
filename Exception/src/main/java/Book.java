@@ -17,6 +17,10 @@ public class Book {
         this.release_year = release_year;
     }
 
+    public Book() {
+
+    }
+
     public int getId() {
         return id;
     }

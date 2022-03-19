@@ -3,7 +3,10 @@ public class Main {
         BookFunction BF = new BookFunction();
         BF.show(BF.getAllBooks());
 
-//        System.out.println("---");
-//        BF.searchBookByName(BF.getAllBooks());
+        System.out.println("---");
+        BF.searchBookByName(BF.getAllBooks());
+
+        System.out.println("---");
+        BF.searchBookByCategory(BF.getAllBooks());
     }
 }
