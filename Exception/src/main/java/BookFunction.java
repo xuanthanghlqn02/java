@@ -1,26 +1,28 @@
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.sun.jdi.Type;
+import com.google.gson.reflect.TypeToken;
 import jdk.jfr.Category;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class BookFunction {
+public class BookFunction implements Comparable<Book> {
 
     static Scanner sc = new Scanner(System.in);
 
-    public Book[] getAllBooks() {
+    public ArrayList<Book> getAllBooks() {
         Gson gson = new Gson();
-        Book[] book = null;
-        FileReader reader;
-
+        ArrayList<Book> book = null;
+        Type bookListType = new TypeToken<ArrayList<Book>>() {
+        }.getType();
         try {
-            reader = new FileReader("book.json");
-            book = gson.fromJson(reader, Book[].class);
+            FileReader reader = new FileReader("book.json");
+            book = gson.fromJson((Reader) reader, bookListType);
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
         }
@@ -28,13 +30,13 @@ public class BookFunction {
         return book;
     }
 
-    public void show(Book[] book) {
+    public void show(ArrayList<Book> book) {
         for (Book x : book) {
             System.out.println(x);
         }
     }
 
-    public void searchBookByName(Book[] book) {
+    public void searchBookByName(ArrayList<Book> book) {
 
         System.out.print("Enter the book name you want to search: ");
         String bookName = sc.nextLine();
@@ -51,7 +53,7 @@ public class BookFunction {
         }
     }
 
-    public void searchBookByCategory(Book[] book) {
+    public void searchBookByCategory(ArrayList<Book> book) {
         System.out.print("Enter the book category you want to search: ");
 
         System.out.print("1. Action" + "\t");
@@ -193,5 +195,10 @@ public class BookFunction {
             default:
                 System.out.println("Do not have this choice!");
         }
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        return 0;
     }
 }
