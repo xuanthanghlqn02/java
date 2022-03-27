@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         BookFunction BF = new BookFunction();
-        BF.showBooks(BF.addBook());
+//        BF.addTextBook();
+        BF.showBooks(BF.addTextBook());
     }
 }
