@@ -23,4 +23,9 @@ public class ElectronicDocuments extends Book {
     public void setDownloads(int downloads) {
         this.downloads = downloads;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " - " + capacity + " - " + downloads;
+    }
 }

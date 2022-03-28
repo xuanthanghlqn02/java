@@ -1,4 +1,4 @@
-public class TextBook extends Book{
+public class TextBook extends Book {
     private int pageNumber;
     private int quantity;
 
@@ -22,5 +22,10 @@ public class TextBook extends Book{
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " - " + pageNumber + " - " + quantity;
     }
 }
