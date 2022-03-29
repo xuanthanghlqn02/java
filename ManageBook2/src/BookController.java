@@ -20,13 +20,13 @@ public class BookController {
                     addBook();
                     break;
                 case 2:
-                    BF.searchBookByName(BF.list);
+                    searchBookByName();
                     break;
                 case 3:
-                    BF.searchBookByID(BF.list);
+                    searchBookByID();
                     break;
                 case 4:
-                    BF.deleteBook(BF.list);
+                    deleteBook();
                     break;
                 case 5:
 //BF.updateElectronicDocuments(BF.list);
@@ -53,12 +53,85 @@ public class BookController {
                 break;
             case 3:
                 menu();
+                break;
             case 4:
                 System.exit(0);
             default:
                 System.out.println("Khong co lua chon nay!!");
         }
 
+    }
+
+    public static void searchBookByName() {
+        System.out.println("1. Tim sach giao khoa");
+        System.out.println("2. Tim tai lieu dien tu");
+        System.out.println("3. Quay lai bang dieu khien: ");
+        System.out.println("4. Thoat chuong trinh!");
+        System.out.print("Nhap vao lua chon cua ban: ");
+        int luaChon = Integer.parseInt(sc.nextLine());
+        switch (luaChon) {
+            case 1:
+                BF.searchTBookByName(BF.listTBook);
+                break;
+            case 2:
+                BF.searchEDocumentByName(BF.listEDocument);
+                break;
+            case 3:
+                menu();
+                break;
+            case 4:
+                System.exit(0);
+            default:
+                System.out.println("Khong co lua chon nay!!");
+        }
+    }
+
+    public static void searchBookByID() {
+        System.out.println("1. Tim sach giao khoa");
+        System.out.println("2. Tim tai lieu dien tu");
+        System.out.println("3. Quay lai bang dieu khien: ");
+        System.out.println("4. Thoat chuong trinh!");
+        System.out.print("Nhap vao lua chon cua ban: ");
+        int luaChon = Integer.parseInt(sc.nextLine());
+        switch (luaChon) {
+            case 1:
+                BF.searchTBookByID(BF.listTBook);
+                break;
+            case 2:
+                BF.searchEDocumentByID(BF.listEDocument);
+                break;
+            case 3:
+                menu();
+                break;
+            case 4:
+                System.exit(0);
+            default:
+                System.out.println("Khong co lua chon nay!!");
+        }
+    }
+
+    public static void deleteBook() {
+        System.out.println("1. Xoa sach giao khoa");
+        System.out.println("2. Xoa tai lieu dien tu");
+        System.out.println("3. Quay lai bang dieu khien: ");
+        System.out.println("4. Thoat chuong trinh!");
+        System.out.print("Nhap vao lua chon cua ban: ");
+        int luaChon = Integer.parseInt(sc.nextLine());
+        switch (luaChon) {
+            case 1:
+                BF.deleteTBook(BF.listTBook);
+                break;
+            case 2:
+                BF.deleteEDocument(BF.listEDocument);
+                break;
+            case 3:
+                menu();
+                break;
+            case 4:
+                System.exit(0);
+            default:
+                System.out.println("Khong co lua chon nay!!");
+        }
     }
 
 }
