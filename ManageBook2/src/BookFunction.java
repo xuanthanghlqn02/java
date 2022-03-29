@@ -113,4 +113,12 @@ public class BookFunction {
 
         showBooks(list);
     }
+
+    public void updateElectronicDocuments(ArrayList<TextBook> list) {
+        for (TextBook x : list) {
+            if (x.getQuantity()>0) {
+                System.out.println(x);
+            }
+        }
+    }
 }

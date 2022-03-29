@@ -28,6 +28,8 @@ public class BookController {
                 case 4:
                     BF.deleteBook(BF.list);
                     break;
+                case 5:
+//BF.updateElectronicDocuments(BF.list);
                 case 7:
                     System.exit(0);
             }
