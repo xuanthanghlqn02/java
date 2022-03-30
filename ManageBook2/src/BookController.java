@@ -10,9 +10,8 @@ public class BookController {
             System.out.println("2. Tim sach theo ten");
             System.out.println("3. Tim sach theo ID");
             System.out.println("4. Xoa sach");
-            System.out.println("5. Cap nhat so luong sach");
-            System.out.println("6. Cap nhat so luot tai");
-            System.out.println("7. Thoat chuong trinh");
+            System.out.println("5. Cap nhat sach");
+            System.out.println("6. Thoat chuong trinh");
             System.out.print("Nhap vao lua chon cua ban: ");
             int luaChon = Integer.parseInt(sc.nextLine());
             switch (luaChon) {
@@ -29,9 +28,13 @@ public class BookController {
                     deleteBook();
                     break;
                 case 5:
-//BF.updateElectronicDocuments(BF.list);
-                case 7:
+                    updateBook();
+                    break;
+                case 6:
+                    System.out.println("Tam biet!");
                     System.exit(0);
+                default:
+                    System.out.println("Khong co lua chon nay! Moi ban chon lai!");
             }
         }
 
@@ -55,6 +58,7 @@ public class BookController {
                 menu();
                 break;
             case 4:
+                System.out.println("Tam biet!");
                 System.exit(0);
             default:
                 System.out.println("Khong co lua chon nay!!");
@@ -80,6 +84,7 @@ public class BookController {
                 menu();
                 break;
             case 4:
+                System.out.println("Tam biet!");
                 System.exit(0);
             default:
                 System.out.println("Khong co lua chon nay!!");
@@ -104,6 +109,7 @@ public class BookController {
                 menu();
                 break;
             case 4:
+                System.out.println("Tam biet!");
                 System.exit(0);
             default:
                 System.out.println("Khong co lua chon nay!!");
@@ -128,6 +134,32 @@ public class BookController {
                 menu();
                 break;
             case 4:
+                System.out.println("Tam biet!");
+                System.exit(0);
+            default:
+                System.out.println("Khong co lua chon nay!!");
+        }
+    }
+
+    public static void updateBook() {
+        System.out.println("1. Cap nhat so luong sach giao khoa");
+        System.out.println("2. Cap nhat so luot tai lieu dien tu");
+        System.out.println("3. Quay lai bang dieu khien: ");
+        System.out.println("4. Thoat chuong trinh!");
+        System.out.print("Nhap vao lua chon cua ban: ");
+        int luaChon = Integer.parseInt(sc.nextLine());
+        switch (luaChon) {
+            case 1:
+                BF.updateTBook(BF.listTBook);
+                break;
+            case 2:
+                BF.updateEDocument(BF.listEDocument);
+                break;
+            case 3:
+                menu();
+                break;
+            case 4:
+                System.out.println("Tam biet!");
                 System.exit(0);
             default:
                 System.out.println("Khong co lua chon nay!!");

@@ -81,7 +81,7 @@ public class BookFunction {
     }
 
     public void searchEDocumentByName(ArrayList<ElectronicDocuments> list) {
-        System.out.print("Nhap vao ten sach ban muon tim: ");
+        System.out.print("Nhap vao ten tai lieu ban muon tim: ");
         String bookName = sc.nextLine();
         int count = 0;
         for (ElectronicDocuments x : list) {
@@ -93,7 +93,7 @@ public class BookFunction {
         }
 
         if (count == 0) {
-            System.out.println("Khong co ten sach ban muon tim!");
+            System.out.println("Khong co ten tai lieu ban muon tim!");
             System.out.println("--------------------------");
         }
     }
@@ -117,7 +117,7 @@ public class BookFunction {
     }
 
     public void searchEDocumentByID(ArrayList<ElectronicDocuments> list) {
-        System.out.print("Nhap vao ID sach ban muon tim: ");
+        System.out.print("Nhap vao ID tai lieu ban muon tim: ");
         int bookID = Integer.parseInt(sc.nextLine());
         int count = 0;
         for (ElectronicDocuments x : list) {
@@ -128,7 +128,7 @@ public class BookFunction {
         }
 
         if (count == 0) {
-            System.out.println("Khong co ID sach ban muon tim!");
+            System.out.println("Khong co ID tai lieu ban muon tim!");
             System.out.println("--------------------------");
         }
     }
@@ -156,7 +156,7 @@ public class BookFunction {
 
     public void deleteEDocument(ArrayList<ElectronicDocuments> list) {
         showBooks(list);
-        System.out.print("Nhap vao ID sach ban muon xoa: ");
+        System.out.print("Nhap vao ID tai lieu ban muon xoa: ");
         int bookID = Integer.parseInt(sc.nextLine());
         int count = 0;
         for (int i = 0; i < list.size(); i++) {
@@ -168,18 +168,55 @@ public class BookFunction {
         }
 
         if (count == 0) {
-            System.out.println("Khong tim thay ID sach nay!");
+            System.out.println("Khong tim thay ID tai lieu nay!");
         }
 
         showBooks(list);
         System.out.println("--------------------------");
     }
 
-    public void updateElectronicDocuments(ArrayList<TextBook> list) {
-        for (TextBook x : list) {
-            if (x.getQuantity() > 0) {
-                System.out.println(x);
+    public void updateTBook(ArrayList<TextBook> list) {
+        showBooks(list);
+        System.out.print("Nhap vao ID sach giao khoa ban muon cap nhat: ");
+        int idBook = Integer.parseInt(sc.nextLine());
+        System.out.print("Nhat vao so luong ban muon thay doi: ");
+        int change = Integer.parseInt(sc.nextLine());
+        int count = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getId() == idBook) {
+                list.get(i).setQuantity(change);
+                count++;
             }
         }
+
+        if (count == 0) {
+            System.out.println("Khong co ID sach giao khoa nay!");
+        }
+
+        showBooks(list);
+        System.out.println("--------------------------");
     }
+
+    public void updateEDocument(ArrayList<ElectronicDocuments> list) {
+        showBooks(list);
+        System.out.print("Nhap vao ID tai lieu dien tu ban muon cap nhat: ");
+        int idBook = Integer.parseInt(sc.nextLine());
+        System.out.print("Nhat vao so luot tai ban muon thay doi: ");
+        int change = Integer.parseInt(sc.nextLine());
+        int count = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getId() == idBook) {
+                list.get(i).setDownloads(change);
+                count++;
+            }
+        }
+
+        if (count == 0) {
+            System.out.println("Khong co ID tai lieu dien tu nay!");
+        }
+
+        showBooks(list);
+        System.out.println("--------------------------");
+    }
+
 }
