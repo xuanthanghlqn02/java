@@ -33,7 +33,11 @@ public class BlogService {
             }
 
             conn.close();
-        } catch (SQLException e) {
+        } catch (NullPointerException ne) {
+            System.out.println("Loi ket noi CDSL! Vui long thu lai!");
+        }
+
+        catch (SQLException e) {
             e.printStackTrace();
         }
 
