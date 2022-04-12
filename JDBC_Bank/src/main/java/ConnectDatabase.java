@@ -14,10 +14,8 @@ public class ConnectDatabase {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url, username, password);
-        } catch (SQLSyntaxErrorException | CommunicationsException e) {
+        }  catch (SQLException e) {
             System.out.println("Ket noi toi CSDL that bai! Vui long thu lai!");
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
 
         return conn;

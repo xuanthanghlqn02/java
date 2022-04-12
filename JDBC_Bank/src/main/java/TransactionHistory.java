@@ -1,4 +1,5 @@
 import java.sql.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,8 +11,8 @@ import lombok.Setter;
 @Getter
 
 public class TransactionHistory {
-    private int id;
-    private int id_user;
+    private String id;
+    private String id_user;
     private String content;
     private Date date;
     private String beneficiaryAccount;
@@ -19,13 +20,11 @@ public class TransactionHistory {
 
     @Override
     public String toString() {
-        return "TransactionHistory{" +
-                "id=" + id +
-                ", id_user=" + id_user +
-                ", content='" + content + '\'' +
-                ", date=" + date +
-                ", beneficiaryAccount='" + beneficiaryAccount + '\'' +
-                ", money=" + money +
-                '}';
+        return "Ma chuyen tien: " + id + " - " +
+                "ID nguoi chuyen: " + id_user + " - " +
+                "Noi dung chuyen tien: " + content + " - " +
+                "Ngay: " + date + " - " +
+                "Tai khoan thu huong: " + beneficiaryAccount + " - " +
+                "So tien chuyen: " + money;
     }
 }
