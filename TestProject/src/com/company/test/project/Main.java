@@ -1,13 +1,28 @@
 package com.company.test.project;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        Student s1 = new Student();
-        s1.setId(1);
-        s1.setName("Hoang");
-        s1.setAge(20);
-        System.out.println(s1);
+        int result = Solution.countDigit(1234);
+        System.out.println(result);
+    }
+
+    static class Solution {
+        public int findNumbers(int[] nums) {
+            int count = 0;
+            return 0;
+        }
+
+        public static int countDigit(int number) {
+            int count = 0;
+            while (number != 0) {
+                number = number / 10;
+                count++;
+            }
+            return count;
+        }
     }
 }
